@@ -1,6 +1,8 @@
 package dev.mayuna.coloredendcrystals.items;
 
 import dev.mayuna.coloredendcrystals.ColoredEndCrystals;
+import dev.mayuna.coloredendcrystals.ModCreativeTabs;
+import dev.mayuna.coloredendcrystals.ModEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -24,7 +26,7 @@ public class ColoredEndCrystalItem extends EndCrystalItem {
     private final String color;
 
     public ColoredEndCrystalItem(String color) {
-        super(new Properties().rarity(Rarity.RARE).arch$tab(ColoredEndCrystals.MAIN_TAB));
+        super(new Properties().rarity(Rarity.RARE).arch$tab(ModCreativeTabs.MAIN_TAB));
         this.color = color;
     }
 
@@ -54,7 +56,7 @@ public class ColoredEndCrystalItem extends EndCrystalItem {
         }
 
         if (level instanceof ServerLevel) {
-            var entity = ColoredEndCrystals.EntityTypes.COLORED_END_CRYSTAL.get().create(level);
+            var entity = ModEntityTypes.COLORED_END_CRYSTAL.get().create(level);
 
             if (entity != null) {
                 entity.setColor(this.color);
@@ -74,5 +76,11 @@ public class ColoredEndCrystalItem extends EndCrystalItem {
 
         useOnContext.getItemInHand().shrink(1);
         return InteractionResult.sidedSuccess(level.isClientSide);
+    }
+
+    @Override
+    public boolean isFoil(ItemStack itemStack) {
+        // Prevent enchantment glint to see the colors better
+        return false;
     }
 }

@@ -1,6 +1,7 @@
 package dev.mayuna.coloredendcrystals.items;
 
 import dev.mayuna.coloredendcrystals.ColoredEndCrystals;
+import dev.mayuna.coloredendcrystals.ModCreativeTabs;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -13,7 +14,7 @@ import java.util.List;
 public class CrystalScrewdriverItem extends Item {
 
     public CrystalScrewdriverItem() {
-        super(new Properties().arch$tab(ColoredEndCrystals.MAIN_TAB));
+        super(new Properties().arch$tab(ModCreativeTabs.MAIN_TAB));
     }
 
     @Override
