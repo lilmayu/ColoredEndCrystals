@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "coloredendcrystals:item/light_blue_end_crystal"
+  }
+}

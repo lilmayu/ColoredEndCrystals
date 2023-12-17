@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "coloredendcrystals:item/pink_end_crystal"
+  }
+}
