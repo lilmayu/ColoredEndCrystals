@@ -5,8 +5,11 @@ import dev.mayuna.coloredendcrystals.ModEntityTypes;
 import dev.mayuna.coloredendcrystals.ModItems;
 import dev.mayuna.coloredendcrystals.entities.ColoredEndCrystalEntity;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.minecraft.world.InteractionResult;
+
+import java.sql.SQLOutput;
 
 public class ColoredEndCrystalsFabric implements ModInitializer {
 
@@ -29,5 +32,9 @@ public class ColoredEndCrystalsFabric implements ModInitializer {
             coloredEndCrystal.onRightClick(player.isShiftKeyDown());
             return InteractionResult.SUCCESS;
         });
+
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0x1b2240;
+        }, ModItems.TINTED_END_CRYSTAL.get());
     }
 }

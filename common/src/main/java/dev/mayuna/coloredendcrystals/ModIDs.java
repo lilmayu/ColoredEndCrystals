@@ -18,6 +18,7 @@ public class ModIDs {
     public static final String GRAY_END_CRYSTAL = "gray_end_crystal";
     public static final String LIGHT_GRAY_END_CRYSTAL = "light_gray_end_crystal";
     public static final String WHITE_END_CRYSTAL = "white_end_crystal";
+    public static final String TINTED_END_CRYSTAL = "tinted_end_crystal";
 
     public static final String COLORED_END_CRYSTAL = "colored_end_crystal";
 

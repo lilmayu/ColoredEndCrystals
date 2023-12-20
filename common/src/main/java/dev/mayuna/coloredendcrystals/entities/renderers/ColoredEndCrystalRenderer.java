@@ -1,10 +1,13 @@
 package dev.mayuna.coloredendcrystals.entities.renderers;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import dev.mayuna.coloredendcrystals.ColoredEndCrystals;
 import dev.mayuna.coloredendcrystals.entities.ColoredEndCrystalEntity;
+import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -13,15 +16,18 @@ import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EnderDragonRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.GhastRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.item.DyeableLeatherItem;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Quaternionf;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class ColoredEndCrystalRenderer extends EntityRenderer<ColoredEndCrystalEntity> {
 
@@ -59,6 +65,7 @@ public class ColoredEndCrystalRenderer extends EntityRenderer<ColoredEndCrystalE
         poseStack.scale(2.0F, 2.0F, 2.0F);
         poseStack.translate(0.0F, -0.5F, 0.0F);
         int k = OverlayTexture.NO_OVERLAY;
+
         if (endCrystal.showsBottom()) {
             this.base.render(poseStack, vertexConsumer, i, k);
         }
@@ -75,7 +82,13 @@ public class ColoredEndCrystalRenderer extends EntityRenderer<ColoredEndCrystalE
         poseStack.scale(0.875F, 0.875F, 0.875F);
         poseStack.mulPose((new Quaternionf()).setAngleAxis(1.0471976F, SIN_45, 0.0F, SIN_45));
         poseStack.mulPose(Axis.YP.rotationDegrees(j));
-        this.cube.render(poseStack, vertexConsumer, i, k);
+
+        int color = getRainbowColorBasedOnTime();
+        float red = (float) ((color >> 16) & 0xFF) / 255.0F;
+        float green = (float) ((color >> 8) & 0xFF) / 255.0F;
+        float blue = (float) (color & 0xFF) / 255.0F;
+        this.cube.render(poseStack, vertexConsumer, i, k, red, green, blue, 1.0F);
+
         poseStack.popPose();
         poseStack.popPose();
         BlockPos blockPos = endCrystal.getBeamTarget();
@@ -91,6 +104,12 @@ public class ColoredEndCrystalRenderer extends EntityRenderer<ColoredEndCrystalE
         }
 
         super.render(endCrystal, f, g, poseStack, multiBufferSource, i);
+    }
+
+    private int getRainbowColorBasedOnTime() {
+        long time = System.currentTimeMillis();
+        float hue = (time % 10000) / 10000f;
+        return java.awt.Color.HSBtoRGB(hue, 1f, 1f);
     }
 
     @Override

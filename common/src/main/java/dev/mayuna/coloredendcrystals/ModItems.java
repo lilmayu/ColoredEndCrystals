@@ -35,6 +35,7 @@ public class ModItems {
     public static RegistrySupplier<Item> GRAY_END_CRYSTAL = register(ModIDs.GRAY_END_CRYSTAL, () -> new ColoredEndCrystalItem("gray"));
     public static RegistrySupplier<Item> LIGHT_GRAY_END_CRYSTAL = register(ModIDs.LIGHT_GRAY_END_CRYSTAL, () -> new ColoredEndCrystalItem("light_gray"));
     public static RegistrySupplier<Item> WHITE_END_CRYSTAL = register(ModIDs.WHITE_END_CRYSTAL, () -> new ColoredEndCrystalItem("white"));
+    public static RegistrySupplier<Item> TINTED_END_CRYSTAL = register(ModIDs.TINTED_END_CRYSTAL, () -> new ColoredEndCrystalItem("tinted"));
 
     public static RegistrySupplier<Item> CRYSTAL_SCREWDRIVER = register(ModIDs.CRYSTAL_SCREWDRIVER, CrystalScrewdriverItem::new);
 
@@ -55,6 +56,7 @@ public class ModItems {
         END_CRYSTAL_ITEMS.put(ModIDs.GRAY_END_CRYSTAL, GRAY_END_CRYSTAL);
         END_CRYSTAL_ITEMS.put(ModIDs.LIGHT_GRAY_END_CRYSTAL, LIGHT_GRAY_END_CRYSTAL);
         END_CRYSTAL_ITEMS.put(ModIDs.WHITE_END_CRYSTAL, WHITE_END_CRYSTAL);
+        END_CRYSTAL_ITEMS.put(ModIDs.TINTED_END_CRYSTAL, TINTED_END_CRYSTAL);
     }
 
     /**
