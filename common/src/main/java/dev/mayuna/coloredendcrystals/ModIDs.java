@@ -22,4 +22,6 @@ public class ModIDs {
     public static final String COLORED_END_CRYSTAL = "colored_end_crystal";
 
     public static final String CRYSTAL_SCREWDRIVER = "crystal_screwdriver";
+
+    public static final String CRYSTAL_WORKBENCH = "crystal_workbench";
 }

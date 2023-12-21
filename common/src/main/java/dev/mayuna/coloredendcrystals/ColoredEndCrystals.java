@@ -12,7 +12,9 @@ public class ColoredEndCrystals {
     public static final Supplier<RegistrarManager> REGISTRAR_MANAGER = Suppliers.memoize(() -> RegistrarManager.get(MOD_ID));
 
     public static void init() {
+        ModBlocks.registerAll();
         ModItems.registerAll();
+        ModBlockEntities.registerAll();
         ModEntityTypes.registerAll();
         ModCreativeTabs.register();
     }
