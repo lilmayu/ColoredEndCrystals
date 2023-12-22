@@ -17,7 +17,10 @@ public class ModMenus {
 
     public static final RegistrySupplier<MenuType<CrystalWorkbenchMenu>> CRYSTAL_WORKBENCH_MENU_TYPE = register("crystal_workbench", () -> MenuRegistry.ofExtended(CrystalWorkbenchMenu::new));
 
-    public static void registerAll() {
+    public static void registerTypes() {
+    }
+
+    public static void registerScreenFactories() {
         MenuRegistry.registerScreenFactory(CRYSTAL_WORKBENCH_MENU_TYPE.get(), CrystalWorkbenchScreen::new);
     }
 

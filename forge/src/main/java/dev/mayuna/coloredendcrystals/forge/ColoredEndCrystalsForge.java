@@ -2,6 +2,7 @@ package dev.mayuna.coloredendcrystals.forge;
 
 import dev.architectury.platform.forge.EventBuses;
 import dev.mayuna.coloredendcrystals.ColoredEndCrystals;
+import dev.mayuna.coloredendcrystals.ModBlocks;
 import dev.mayuna.coloredendcrystals.ModEntityTypes;
 import dev.mayuna.coloredendcrystals.ModItems;
 import dev.mayuna.coloredendcrystals.entities.ColoredEndCrystalEntity;
@@ -18,6 +19,8 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegisterEvent;
 
 @Mod(ColoredEndCrystals.MOD_ID)
 @Mod.EventBusSubscriber(modid = ColoredEndCrystals.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)

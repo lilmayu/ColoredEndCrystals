@@ -5,13 +5,11 @@ import dev.mayuna.coloredendcrystals.ModBlockEntities;
 import dev.mayuna.coloredendcrystals.ModCreativeTabs;
 import dev.mayuna.coloredendcrystals.blockentities.CrystalWorkbenchBlockEntity;
 import dev.mayuna.coloredendcrystals.menus.CrystalWorkbenchMenuProvider;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -50,8 +48,7 @@ public class CrystalWorkbenchBlock extends MayuBlock implements EntityBlock {
         if (player instanceof ServerPlayer serverPlayer) {
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
             if (blockEntity instanceof CrystalWorkbenchBlockEntity crystalWorkbenchBlockEntity) {
-                MenuRegistry.openExtendedMenu(serverPlayer, new CrystalWorkbenchMenuProvider());
-
+                MenuRegistry.openExtendedMenu(serverPlayer, new CrystalWorkbenchMenuProvider(crystalWorkbenchBlockEntity));
                 return InteractionResult.CONSUME;
             }
         }

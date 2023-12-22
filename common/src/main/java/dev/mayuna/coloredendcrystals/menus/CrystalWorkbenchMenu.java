@@ -17,6 +17,8 @@ public class CrystalWorkbenchMenu extends AbstractContainerMenu {
         super(ModMenus.CRYSTAL_WORKBENCH_MENU_TYPE.get(), i);
         this.inventory = inventory;
         this.buf = buf;
+
+        System.out.println("Byte is: " + buf.readByte());
     }
 
     @Override

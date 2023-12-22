@@ -1,9 +1,14 @@
 package dev.mayuna.coloredendcrystals.neoforge;
 
+import dev.architectury.event.events.client.ClientLifecycleEvent;
+import dev.architectury.platform.hooks.EventBusesHooks;
+import dev.architectury.platform.hooks.forge.EventBusesHooksImpl;
 import dev.mayuna.coloredendcrystals.ColoredEndCrystals;
 import dev.mayuna.coloredendcrystals.ModEntityTypes;
 import dev.mayuna.coloredendcrystals.ModItems;
+import dev.mayuna.coloredendcrystals.ModMenus;
 import dev.mayuna.coloredendcrystals.entities.ColoredEndCrystalEntity;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
@@ -12,6 +17,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 @Mod(ColoredEndCrystals.MOD_ID)
@@ -19,7 +25,6 @@ public class ColoredEndCrystalsNeoForge {
 
     public ColoredEndCrystalsNeoForge() {
         ColoredEndCrystals.init();
-
         NeoForge.EVENT_BUS.register(this);
     }
 

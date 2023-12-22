@@ -22,7 +22,7 @@ public class ModBlocks {
      * Registers all blocks and block items.
      */
     public static void registerAll() {
-        registerBlockItem(ModIDs.CRYSTAL_WORKBENCH, CRYSTAL_WORKBENCH.get());
+        registerBlockItem(ModIDs.CRYSTAL_WORKBENCH, CRYSTAL_WORKBENCH);
     }
 
     /**
@@ -44,7 +44,7 @@ public class ModBlocks {
      * @param id    The id of the item.
      * @param block The block.
      */
-    private static void registerBlockItem(String id, MayuBlock block) {
-        ITEMS.register(new ResourceLocation(ColoredEndCrystals.MOD_ID, id), block::getBlockItem);
+    private static void registerBlockItem(String id, Supplier<MayuBlock> block) {
+        ITEMS.register(new ResourceLocation(ColoredEndCrystals.MOD_ID, id), () -> block.get().getBlockItem());
     }
 }
