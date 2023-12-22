@@ -22,7 +22,7 @@ public class ModCreativeTabs {
     /**
      * Registers the creative tabs.
      */
-    public static void register() {
+    public static void registerAll() {
         TABS.register();
     }
 }

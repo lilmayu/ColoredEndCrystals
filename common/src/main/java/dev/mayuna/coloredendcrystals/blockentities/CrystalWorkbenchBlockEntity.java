@@ -29,7 +29,5 @@ public class CrystalWorkbenchBlockEntity extends BlockEntity {
         if (level.isClientSide) {
             return;
         }
-
-        System.out.println("tick");
     }
 }
