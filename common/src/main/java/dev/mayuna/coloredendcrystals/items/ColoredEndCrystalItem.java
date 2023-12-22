@@ -1,6 +1,5 @@
 package dev.mayuna.coloredendcrystals.items;
 
-import dev.mayuna.coloredendcrystals.ColoredEndCrystals;
 import dev.mayuna.coloredendcrystals.ModCreativeTabs;
 import dev.mayuna.coloredendcrystals.ModEntityTypes;
 import net.minecraft.core.BlockPos;
