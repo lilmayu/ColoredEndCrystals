@@ -1,10 +1,7 @@
 package dev.mayuna.coloredendcrystals.menus;
 
 import dev.architectury.registry.menu.ExtendedMenuProvider;
-import dev.architectury.registry.menu.MenuRegistry;
-import dev.mayuna.coloredendcrystals.ModMenus;
 import dev.mayuna.coloredendcrystals.blockentities.CrystalWorkbenchBlockEntity;
-import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -23,13 +20,14 @@ public class CrystalWorkbenchMenuProvider implements ExtendedMenuProvider {
 
     @Override
     public void saveExtraData(FriendlyByteBuf buf) {
-        buf.writeByte(0xF);
+        buf.writeBlockPos(blockEntity.getBlockPos());
     }
 
     @Override
     public Component getDisplayName() {
-        return Component.literal("Testing display name");
+        return Component.translatable("item.coloredendcrystals.crystal_workbench");
     }
+
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int syncId, Inventory inventory, Player player) {

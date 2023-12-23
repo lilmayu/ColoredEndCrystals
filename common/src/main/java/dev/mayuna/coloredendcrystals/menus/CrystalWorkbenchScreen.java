@@ -1,18 +1,42 @@
 package dev.mayuna.coloredendcrystals.menus;
 
+import dev.mayuna.coloredendcrystals.ColoredEndCrystals;
+import dev.mayuna.coloredendcrystals.utils.ScreenUtil;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class CrystalWorkbenchScreen extends AbstractContainerScreen<CrystalWorkbenchMenu> {
+public class CrystalWorkbenchScreen extends BaseMayuScreen<CrystalWorkbenchMenu> {
+
+    private static final ResourceLocation GUI_TEXTURE = new ResourceLocation(ColoredEndCrystals.MOD_ID, "textures/gui/crystal_workbench.png");
 
     public CrystalWorkbenchScreen(CrystalWorkbenchMenu abstractContainerMenu, Inventory inventory, Component title) {
         super(abstractContainerMenu, inventory, title);
+
+        imageWidth = 176;
+        imageHeight = 180;
+
+        titleLabelX = 8;
+        titleLabelY = 8;
+
+        inventoryLabelX = 8;
+        inventoryLabelY = 86;
+    }
+
+    @Override
+    public void render(GuiGraphics guiGraphics, int i, int j, float f) {
+        super.render(guiGraphics, i, j, f);
     }
 
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float f, int i, int j) {
-        guiGraphics.drawString(font, "woohoooo", 0, 0, 0xFFFFFF);
+        guiGraphics.blit(GUI_TEXTURE, ScreenUtil.calculateNormalX(this), ScreenUtil.calculateNormalY(this), 0, 0, imageWidth, imageHeight);
+    }
+
+    @Override
+    protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+        guiGraphics.drawString(this.font, this.title, this.titleLabelX, this.titleLabelY, 4210752, false);
+        guiGraphics.drawString(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY, 4210752, false);
     }
 }

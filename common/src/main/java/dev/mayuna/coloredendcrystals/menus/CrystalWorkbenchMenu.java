@@ -1,29 +1,23 @@
 package dev.mayuna.coloredendcrystals.menus;
 
 import dev.mayuna.coloredendcrystals.ModMenus;
+import dev.mayuna.coloredendcrystals.blockentities.CrystalWorkbenchBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.item.ItemStack;
-import org.jetbrains.annotations.NotNull;
+import net.minecraft.world.inventory.Slot;
 
-public class CrystalWorkbenchMenu extends AbstractContainerMenu {
+public class CrystalWorkbenchMenu extends BaseMayuMenu {
 
-    private final Inventory inventory;
-    private final FriendlyByteBuf buf;
+    private final CrystalWorkbenchBlockEntity blockEntity;
 
     public CrystalWorkbenchMenu(int i, Inventory inventory, FriendlyByteBuf buf) {
-        super(ModMenus.CRYSTAL_WORKBENCH_MENU_TYPE.get(), i);
-        this.inventory = inventory;
-        this.buf = buf;
+        super(ModMenus.CRYSTAL_WORKBENCH_MENU_TYPE.get(), inventory, i);
+        this.blockEntity = (CrystalWorkbenchBlockEntity) inventory.player.level().getBlockEntity(buf.readBlockPos());
 
-        System.out.println("Byte is: " + buf.readByte());
-    }
-
-    @Override
-    public @NotNull ItemStack quickMoveStack(Player player, int syncId) {
-        return ItemStack.EMPTY; // TODO idk?
+        addSlot(new Slot(blockEntity, 0, 80, 35));
+        addPlayerInventorySlots(inventory, 0, 12);
+        addPlayerHotbarSlots(inventory, 0, 12);
     }
 
     @Override

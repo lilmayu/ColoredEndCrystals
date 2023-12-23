@@ -21,5 +21,6 @@
   "entity.coloredendcrystals.colored_end_crystal": "Colored End Crystal",
   "item.coloredendcrystals.crystal_screwdriver": "Crystal Screwdriver",
   "item.coloredendcrystals.crystal_screwdriver.tooltip.right_click": "§6Right click§7 to toggle crystal pedestal",
-  "item.coloredendcrystals.crystal_screwdriver.tooltip.shift_right_click": "§6Shift right click§7 to move the crystal up"
+  "item.coloredendcrystals.crystal_screwdriver.tooltip.shift_right_click": "§6Shift right click§7 to move the crystal up",
+  "item.coloredendcrystals.crystal_workbench": "Crystal Workbench"
 }
