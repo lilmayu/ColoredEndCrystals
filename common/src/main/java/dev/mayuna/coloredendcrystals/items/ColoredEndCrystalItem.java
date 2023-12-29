@@ -68,7 +68,7 @@ public class ColoredEndCrystalItem extends EndCrystalItem {
 
             level.gameEvent(useOnContext.getPlayer(), GameEvent.ENTITY_PLACE, blockPos);
 
-            EndDragonFight endDragonFight = ((ServerLevel)level).getDragonFight();
+            EndDragonFight endDragonFight = ((ServerLevel)level).getLevel().dragonFight();
             if (endDragonFight != null) {
                 endDragonFight.tryRespawn();
             }

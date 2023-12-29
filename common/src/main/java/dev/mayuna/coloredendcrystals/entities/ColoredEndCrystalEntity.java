@@ -94,7 +94,7 @@ public class ColoredEndCrystalEntity extends EndCrystal {
             return false;
         }
 
-        if (this.isRemoved() || this.level().isClientSide) {
+        if (this.isRemoved() || this.level.isClientSide) {
             return false;
         }
 
@@ -114,8 +114,8 @@ public class ColoredEndCrystalEntity extends EndCrystal {
     }
 
     private void onDestroyedBy(DamageSource damageSource) {
-        if (this.level() instanceof ServerLevel) {
-            EndDragonFight endDragonFight = ((ServerLevel) this.level()).getDragonFight();
+        if (this.level instanceof ServerLevel) {
+            EndDragonFight endDragonFight = ((ServerLevel) this.level).getLevel().dragonFight();
             if (endDragonFight != null) {
                 endDragonFight.onCrystalDestroyed(this, damageSource);
             }
