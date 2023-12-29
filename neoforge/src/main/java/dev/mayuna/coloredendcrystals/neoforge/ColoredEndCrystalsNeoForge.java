@@ -8,14 +8,22 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @Mod(ColoredEndCrystals.MOD_ID)
 public class ColoredEndCrystalsNeoForge {
 
+    // Logger
+    public static final Logger LOGGER = LogManager.getLogger(ColoredEndCrystals.MOD_ID);
+
     public ColoredEndCrystalsNeoForge() {
+        LOGGER.info("Hello >_<");
+        LOGGER.info("Initializing Colored End Crystals...");
         ColoredEndCrystals.init();
 
         NeoForge.EVENT_BUS.register(this);
+        LOGGER.info("Initialized Colored End Crystals! Have fun :3");
     }
 
     @SubscribeEvent
