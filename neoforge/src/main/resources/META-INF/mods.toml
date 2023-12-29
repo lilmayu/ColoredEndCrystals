@@ -49,7 +49,7 @@ Adds Colored End Crystals to the game.
    # the modid of the dependency
    modId="neoforge" #mandatory
    # Does this dependency have to exist - if not, ordering below must be specified
-   mandatory=true #mandatory
+   required=true #mandatory
    # The version range of the dependency
    versionRange="[1.0,)" #mandatory
    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
@@ -59,14 +59,14 @@ Adds Colored End Crystals to the game.
 # Here's another dependency
 [[dependencies.coloredendcrystals]]
    modId="minecraft"
-   mandatory=true
+   required=true
    # This version range declares a minimum of the current minecraft version up to but not including the next major version
-   versionRange="[1.20.2,1.21)"
+   versionRange="[1.20.4,1.21)"
    ordering="NONE"
    side="BOTH"
 [[dependencies.coloredendcrystals]]
    modId="architectury"
-   mandatory=true
-   versionRange="[10,)"
+   required=true
+   versionRange="[11,)"
    ordering="NONE"
    side="BOTH"
