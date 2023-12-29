@@ -41,7 +41,8 @@ shadowJar {
 remapJar {
     inputFile.set shadowJar.archiveFile
     dependsOn shadowJar
-    archiveClassifier.set(null)
+    archiveClassifier.set("fabric-${minecraft_version}")
+    archiveBaseName.set("../../../build-remaped-jars/" + archiveBaseName.get())
 }
 
 jar {

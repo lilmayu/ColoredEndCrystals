@@ -2,3 +2,5 @@
 build/
 .gradle/
 run/
+build-remaped-jars/
+.architectury-transformer/

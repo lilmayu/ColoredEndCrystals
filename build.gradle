@@ -49,3 +49,9 @@ allprojects {
         withSourcesJar()
     }
 }
+
+tasks.register('buildAll') {
+    dependsOn 'fabric:remapJar'
+    dependsOn 'forge:remapJar'
+    dependsOn 'neoforge:remapJar'
+}
