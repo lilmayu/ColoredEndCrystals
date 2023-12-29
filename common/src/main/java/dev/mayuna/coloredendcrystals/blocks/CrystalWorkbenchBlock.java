@@ -7,6 +7,8 @@ import dev.mayuna.coloredendcrystals.blockentities.CrystalWorkbenchBlockEntity;
 import dev.mayuna.coloredendcrystals.menus.CrystalWorkbenchMenuProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -54,5 +56,22 @@ public class CrystalWorkbenchBlock extends MayuBlock implements EntityBlock {
         }
 
         return InteractionResult.PASS;
+    }
+
+    @Override
+    public void onRemove(BlockState blockState, Level level, BlockPos blockPos, BlockState blockState2, boolean bl) {
+        super.onRemove(blockState, level, blockPos, blockState2, bl); // Process any other block removal logic
+
+        if (blockState.getBlock() == blockState2.getBlock()) {
+            return;
+        }
+
+        BlockEntity blockEntity = level.getBlockEntity(blockPos);
+
+        if (!(blockEntity instanceof CrystalWorkbenchBlockEntity crystalWorkbenchBlockEntity)) {
+            return;
+        }
+
+        Containers.dropContents(level, blockPos, crystalWorkbenchBlockEntity);
     }
 }

@@ -31,7 +31,7 @@ import java.util.List;
 
 public class CrystalWorkbenchBlockEntity extends BlockEntity implements Container {
 
-    private @Getter NonNullList<ItemStack> machineInventory = NonNullList.withSize(10, ItemStack.EMPTY);
+    private @Getter NonNullList<ItemStack> machineInventory = NonNullList.withSize(7, ItemStack.EMPTY);
 
     public CrystalWorkbenchBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(ModBlockEntities.CRYSTAL_WORKBENCH.get(), blockPos, blockState);
@@ -63,7 +63,6 @@ public class CrystalWorkbenchBlockEntity extends BlockEntity implements Containe
         }
     }
 
-    // TODO: On break drop inventory contents
     // TODO: Contant inventory idencies
 
     @Override
