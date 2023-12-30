@@ -1,0 +1,16 @@
+[
+{
+  "modid": "${modid}",
+  "name": "Colored End Crystals",
+  "description": "Adds Colored End Crystals to the game.",
+  "version": "${version}",
+  "mcversion": "${minecraft_version}",
+  "url": "https://github.com/lilmayu/ColoredEndCrystals",
+  "updateUrl": "",
+  "authorList": ["mayuna_"],
+  "credits": "my mom",
+  "logoFile": "icon.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

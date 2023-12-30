@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "coloredendcrystals:item/crystal_screwdriver"
-  }
-}

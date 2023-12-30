@@ -1,0 +1,20 @@
+item.end_crystal.name=End Crystal
+item.red_end_crystal.name=Red End Crystal
+item.orange_end_crystal.name=Orange End Crystal
+item.yellow_end_crystal.name=Yellow End Crystal
+item.lime_end_crystal.name=Lime End Crystal
+item.green_end_crystal.name=Green End Crystal
+item.cyan_end_crystal.name=Cyan End Crystal
+item.blue_end_crystal.name=Blue End Crystal
+item.light_blue_end_crystal.name=Light Blue End Crystal
+item.purple_end_crystal.name=Purple End Crystal
+item.magenta_end_crystal.name=Magenta End Crystal
+item.pink_end_crystal.name=Pink End Crystal
+item.brown_end_crystal.name=Brown End Crystal
+item.black_end_crystal.name=Black End Crystal
+item.gray_end_crystal.name=Gray End Crystal
+item.light_gray_end_crystal.name=Light Gray End Crystal
+item.white_end_crystal.name=White End Crystal
+item.crystal_screwdriver.name=Crystal Screwdriver
+
+itemGroup.coloredendcrystals:main=Colored End Crystals
