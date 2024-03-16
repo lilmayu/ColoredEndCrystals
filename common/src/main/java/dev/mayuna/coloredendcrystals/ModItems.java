@@ -4,6 +4,7 @@ import dev.architectury.registry.registries.Registrar;
 import dev.architectury.registry.registries.RegistrySupplier;
 import dev.mayuna.coloredendcrystals.items.ColoredEndCrystalItem;
 import dev.mayuna.coloredendcrystals.items.CrystalScrewdriverItem;
+import dev.mayuna.coloredendcrystals.items.RainbowColoredEndCrystalItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -35,6 +36,7 @@ public class ModItems {
     public static RegistrySupplier<Item> GRAY_END_CRYSTAL = register(ModIDs.GRAY_END_CRYSTAL, () -> new ColoredEndCrystalItem("gray"));
     public static RegistrySupplier<Item> LIGHT_GRAY_END_CRYSTAL = register(ModIDs.LIGHT_GRAY_END_CRYSTAL, () -> new ColoredEndCrystalItem("light_gray"));
     public static RegistrySupplier<Item> WHITE_END_CRYSTAL = register(ModIDs.WHITE_END_CRYSTAL, () -> new ColoredEndCrystalItem("white"));
+    public static RegistrySupplier<Item> RAINBOW_END_CRYSTAL = register(ModIDs.RAINBOW_END_CRYSTAL, () -> new RainbowColoredEndCrystalItem("rainbow"));
 
     public static RegistrySupplier<Item> CRYSTAL_SCREWDRIVER = register(ModIDs.CRYSTAL_SCREWDRIVER, CrystalScrewdriverItem::new);
 
@@ -55,6 +57,7 @@ public class ModItems {
         END_CRYSTAL_ITEMS.put(ModIDs.GRAY_END_CRYSTAL, GRAY_END_CRYSTAL);
         END_CRYSTAL_ITEMS.put(ModIDs.LIGHT_GRAY_END_CRYSTAL, LIGHT_GRAY_END_CRYSTAL);
         END_CRYSTAL_ITEMS.put(ModIDs.WHITE_END_CRYSTAL, WHITE_END_CRYSTAL);
+        END_CRYSTAL_ITEMS.put(ModIDs.RAINBOW_END_CRYSTAL, RAINBOW_END_CRYSTAL);
     }
 
     /**

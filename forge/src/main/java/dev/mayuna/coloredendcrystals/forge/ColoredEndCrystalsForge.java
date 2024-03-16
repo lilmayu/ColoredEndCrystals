@@ -5,6 +5,9 @@ import dev.mayuna.coloredendcrystals.ColoredEndCrystals;
 import dev.mayuna.coloredendcrystals.ModEntityTypes;
 import dev.mayuna.coloredendcrystals.ModItems;
 import dev.mayuna.coloredendcrystals.entities.ColoredEndCrystalEntity;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -45,5 +48,11 @@ public class ColoredEndCrystalsForge {
 
         coloredEndCrystal.onRightClick(player.isShiftKeyDown());
         event.setResult(Event.Result.DEFAULT);
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @SubscribeEvent
+    public static void onRegisterColorHandler(RegisterColorHandlersEvent.Item event) {
+        event.register(ColoredEndCrystals::processRainbowEndCrystalItemTint, ModItems.RAINBOW_END_CRYSTAL.get());
     }
 }

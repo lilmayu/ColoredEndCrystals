@@ -1,15 +1,19 @@
 package dev.mayuna.coloredendcrystals.entities;
 
+import dev.architectury.registry.menu.MenuRegistry;
 import dev.mayuna.coloredendcrystals.ModItems;
+import dev.mayuna.coloredendcrystals.menu.RainbowCrystalMenuProvider;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.boss.enderdragon.EndCrystal;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.end.EndDragonFight;
@@ -98,6 +102,15 @@ public class ColoredEndCrystalEntity extends EndCrystal {
             return false;
         }
 
+        if (damageSource.getEntity() instanceof ServerPlayer player) {
+            ItemStack holdingItemStack = player.getMainHandItem();
+
+            if (holdingItemStack.getItem() == ModItems.CRYSTAL_SCREWDRIVER.get()) {
+                this.onLeftClick(player, player.isShiftKeyDown());
+                return false;
+            }
+        }
+
         this.remove(RemovalReason.KILLED);
 
         if (!damageSource.isCreativePlayer()) {
@@ -156,5 +169,26 @@ public class ColoredEndCrystalEntity extends EndCrystal {
 
         this.setShiftedBy(nextShiftedBy);
         this.moveTo(this.getX(), newY, this.getZ());
+    }
+
+    /**
+     * Called when the end crystal is left clicked.
+     *
+     * @param shiftKeyDown If the shift key was down when the end crystal was left clicked.
+     */
+    public void onLeftClick(ServerPlayer serverPlayer, boolean shiftKeyDown) {
+        System.out.println("Left clicked!");
+        MenuRegistry.openExtendedMenu(serverPlayer, new RainbowCrystalMenuProvider(this));
+    }
+
+    @Override
+    public ItemStack getPickResult() {
+        var item = ModItems.getEndCrystalItemByColor(this.getEntityData().get(DATA_COLOR));
+
+        if (item != null) {
+            return new ItemStack(item);
+        }
+
+        return super.getPickResult();
     }
 }

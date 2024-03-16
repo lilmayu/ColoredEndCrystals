@@ -75,7 +75,18 @@ public class ColoredEndCrystalRenderer extends EntityRenderer<ColoredEndCrystalE
         poseStack.scale(0.875F, 0.875F, 0.875F);
         poseStack.mulPose((new Quaternionf()).setAngleAxis(1.0471976F, SIN_45, 0.0F, SIN_45));
         poseStack.mulPose(Axis.YP.rotationDegrees(j));
-        this.cube.render(poseStack, vertexConsumer, i, k);
+
+        // Check if the end crystal is a rainbow end crystal
+        if ("rainbow".equals(endCrystal.getColor())) {
+            int color = ColoredEndCrystals.getRainbowHueBasedOnTime();
+            float red = (float) ((color >> 16) & 0xFF) / 255.0F;
+            float green = (float) ((color >> 8) & 0xFF) / 255.0F;
+            float blue = (float) (color & 0xFF) / 255.0F;
+            this.cube.render(poseStack, vertexConsumer, i, k, red, green, blue, 1.0F);
+        } else {
+            this.cube.render(poseStack, vertexConsumer, i, k);
+        }
+
         poseStack.popPose();
         poseStack.popPose();
         BlockPos blockPos = endCrystal.getBeamTarget();

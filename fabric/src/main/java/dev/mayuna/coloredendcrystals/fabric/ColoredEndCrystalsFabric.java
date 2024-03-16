@@ -5,6 +5,7 @@ import dev.mayuna.coloredendcrystals.ModEntityTypes;
 import dev.mayuna.coloredendcrystals.ModItems;
 import dev.mayuna.coloredendcrystals.entities.ColoredEndCrystalEntity;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.minecraft.world.InteractionResult;
 import org.slf4j.Logger;
@@ -36,6 +37,10 @@ public class ColoredEndCrystalsFabric implements ModInitializer {
             coloredEndCrystal.onRightClick(player.isShiftKeyDown());
             return InteractionResult.SUCCESS;
         });
+
+        // Register the ColorProviderRegistry event
+        // TODO: Move to Client only?
+        ColorProviderRegistry.ITEM.register(ColoredEndCrystals::processRainbowEndCrystalItemTint, ModItems.RAINBOW_END_CRYSTAL.get());
 
         LOGGER.info("Initialized Colored End Crystals! Have fun :3");
     }
