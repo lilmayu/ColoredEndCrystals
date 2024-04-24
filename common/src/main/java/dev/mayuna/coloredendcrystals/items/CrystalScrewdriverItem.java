@@ -18,7 +18,8 @@ public class CrystalScrewdriverItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
+        super.appendHoverText(itemStack, tooltipContext, list, tooltipFlag);
         list.add(Component.translatable("item.coloredendcrystals.crystal_screwdriver.tooltip.right_click"));
         list.add(Component.translatable("item.coloredendcrystals.crystal_screwdriver.tooltip.shift_right_click"));
     }

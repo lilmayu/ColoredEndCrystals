@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "minecraft:end_crystal"
@@ -9,7 +10,7 @@
     }
   ],
   "result": {
-    "item": "coloredendcrystals:magenta_end_crystal",
+    "id": "coloredendcrystals:magenta_end_crystal",
     "count": 1
   }
 }

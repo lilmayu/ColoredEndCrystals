@@ -31,7 +31,7 @@ public class ColoredEndCrystalItem extends EndCrystalItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
         list.add(Component.translatable("item.coloredendcrystals.colored_end_crystal.tooltip.right_click"));
         list.add(Component.translatable("item.coloredendcrystals.colored_end_crystal.tooltip.break"));
     }
