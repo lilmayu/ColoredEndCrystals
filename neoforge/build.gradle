@@ -23,6 +23,9 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-neoforge:${rootProject.architectury_version}"
 
+    // Dynamic Lights (https://www.curseforge.com/minecraft/mc-mods/dynamic-lights/files/5113045)
+    modApi "curse.maven:dynamic-lights-227874:5113045"
+
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
 }
