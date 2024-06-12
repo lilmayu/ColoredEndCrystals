@@ -18,6 +18,9 @@
   "entrypoints": {
     "main": [
       "dev.mayuna.coloredendcrystals.fabric.ColoredEndCrystalsFabric"
+    ],
+    "dynamiclights": [
+      "dev.mayuna.coloredendcrystals.fabric.integrations.LambDynamicLightsIntegration"
     ]
   },
   "depends": {
