@@ -70,3 +70,10 @@ Adds Colored End Crystals to the game.
    versionRange="[11,)"
    ordering="NONE"
    side="BOTH"
+[[dependencies.coloredendcrystals]]
+   modId="dynamiclights"
+   required=false
+   versionRange="[0,)" # Any
+   ordering="AFTER"
+   side="BOTH"
+
