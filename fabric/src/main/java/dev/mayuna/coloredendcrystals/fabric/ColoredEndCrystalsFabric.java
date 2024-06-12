@@ -6,11 +6,14 @@ import dev.mayuna.coloredendcrystals.ModItems;
 import dev.mayuna.coloredendcrystals.entities.ColoredEndCrystalEntity;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.world.InteractionResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ColoredEndCrystalsFabric implements ModInitializer {
+
+    public static final String RYOAMIC_LIGHTS_MOD_ID = "ryoamiclights";
 
     // Logger
     public static final Logger LOGGER = LoggerFactory.getLogger(ColoredEndCrystals.MOD_ID);
@@ -37,6 +40,29 @@ public class ColoredEndCrystalsFabric implements ModInitializer {
             return InteractionResult.SUCCESS;
         });
 
+        LOGGER.info("Checking for available integrations...");
+        checkForIntegrations();
+
         LOGGER.info("Initialized Colored End Crystals! Have fun :3");
+    }
+
+    /**
+     * Checks for other mod integrations
+     */
+    private void checkForIntegrations() {
+        if (!isModLoaded(RYOAMIC_LIGHTS_MOD_ID)) {
+            LOGGER.warn("Ryoamic Lights are not loaded! Colored End Crystals will not emit light.");
+        }
+    }
+
+    /**
+     * Determines if a mod is loaded
+     *
+     * @param modId The mod ID
+     *
+     * @return True if the mod is loaded, false otherwise
+     */
+    private boolean isModLoaded(String modId) {
+        return FabricLoader.getInstance().isModLoaded(modId);
     }
 }
