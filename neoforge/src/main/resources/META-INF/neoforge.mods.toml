@@ -42,7 +42,7 @@ authors="Mayuna" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Adds Colored End Crystals to the game.
+Adds Colored End Crystals to the game for Minecraft 1.20.6
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.coloredendcrystals]] #optional
