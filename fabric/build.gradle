@@ -21,6 +21,10 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
 
+    // LambDynamicLights 2.3.4 (https://www.curseforge.com/minecraft/mc-mods/lambdynamiclights/files/4597862)
+    modApi "curse.maven:lambdynamiclights-393442:4597862"
+    modApi "dev.lambdaurora:spruceui:4.2.0+1.19.4"
+
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }
