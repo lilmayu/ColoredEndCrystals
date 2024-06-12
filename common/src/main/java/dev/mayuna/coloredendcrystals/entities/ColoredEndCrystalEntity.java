@@ -14,6 +14,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.end.EndDragonFight;
 
+import java.util.function.Consumer;
+
 public class ColoredEndCrystalEntity extends EndCrystal {
 
     public static final byte SHIFTED_BY_MIN = 0;
@@ -22,9 +24,25 @@ public class ColoredEndCrystalEntity extends EndCrystal {
     private static final EntityDataAccessor<String> DATA_COLOR = SynchedEntityData.defineId(ColoredEndCrystalEntity.class, EntityDataSerializers.STRING);
     private static final EntityDataAccessor<Byte> DATA_SHIFTED_BY = SynchedEntityData.defineId(ColoredEndCrystalEntity.class, EntityDataSerializers.BYTE);
 
+    public static Consumer<ColoredEndCrystalEntity> onTickAddition = null;
+    public static Consumer<ColoredEndCrystalEntity> onConstructAddition = null;
+
     public ColoredEndCrystalEntity(EntityType<ColoredEndCrystalEntity> entityType, Level level, String color) {
         super(entityType, level);
         this.setColor(color);
+
+        if (onConstructAddition != null) {
+            onConstructAddition.accept(this);
+        }
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+
+        if (onTickAddition != null) {
+            onTickAddition.accept(this);
+        }
     }
 
     /**
