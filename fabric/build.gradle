@@ -21,6 +21,11 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
 
+    // Dynamic Lights (https://www.curseforge.com/minecraft/mc-mods/ryoamiclights/files/5353307)
+    modApi "curse.maven:ryoamiclights-913587:5353307"
+    // ObsidianUI (https://www.curseforge.com/minecraft/mc-mods/obsidianui/files/5353257)
+    modApi "curse.maven:obsidianui-684718:5353257"
+
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }
