@@ -73,7 +73,7 @@ public class ModItems {
      * @return The item registry supplier.
      */
     private static <T extends Item> RegistrySupplier<T> register(String id, Supplier<T> supplier) {
-        return ITEMS.register(new ResourceLocation(ColoredEndCrystals.MOD_ID, id), supplier);
+        return ITEMS.register(ResourceLocation.tryBuild(ColoredEndCrystals.MOD_ID, id), supplier);
     }
 
     /**

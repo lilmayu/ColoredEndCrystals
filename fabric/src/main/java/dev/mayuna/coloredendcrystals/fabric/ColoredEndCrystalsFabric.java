@@ -51,7 +51,7 @@ public class ColoredEndCrystalsFabric implements ModInitializer {
      */
     private void checkForIntegrations() {
         if (!isModLoaded(RYOAMIC_LIGHTS_MOD_ID)) {
-            LOGGER.warn("Ryoamic Lights are not loaded! Colored End Crystals will not emit light.");
+            //LOGGER.warn("Ryoamic Lights are not loaded! Colored End Crystals will not emit light.");
         }
     }
 

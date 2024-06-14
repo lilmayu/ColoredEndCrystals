@@ -107,7 +107,7 @@ public class ColoredEndCrystalRenderer extends EntityRenderer<ColoredEndCrystalE
             return cachedResourceLocation;
         }
 
-        cachedResourceLocation = new ResourceLocation(ColoredEndCrystals.MOD_ID, "textures/entity/end_crystals/" + color + "_end_crystal.png");
+        cachedResourceLocation = ResourceLocation.tryBuild(ColoredEndCrystals.MOD_ID, "textures/entity/end_crystals/" + color + "_end_crystal.png");
         CACHED_RESOURCE_LOCATIONS.put(color, cachedResourceLocation);
 
         return cachedResourceLocation;

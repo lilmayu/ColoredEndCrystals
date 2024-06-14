@@ -5,16 +5,19 @@ import dev.mayuna.coloredendcrystals.entities.ColoredEndCrystalEntity;
 import dev.mayuna.coloredendcrystals.fabric.ColoredEndCrystalsFabric;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+/*
 import org.thinkingstudio.ryoamiclights.DynamicLightSource;
 import org.thinkingstudio.ryoamiclights.RyoamicLights;
 import org.thinkingstudio.ryoamiclights.api.DynamicLightHandlers;
 import org.thinkingstudio.ryoamiclights.fabric.api.DynamicLightsInitializer;
+*/
 
 /**
  * Integration for <a href="https://www.curseforge.com/minecraft/mc-mods/ryoamiclights">RyoamicLights</a>
  */
-public final class RyoamicLightsIntegration implements DynamicLightsInitializer, dev.lambdaurora.lambdynlights.api.DynamicLightsInitializer {
+public final class RyoamicLightsIntegration /*implements DynamicLightsInitializer, dev.lambdaurora.lambdynlights.api.DynamicLightsInitializer*/ {
 
+    /*
     @Override
     public void onInitializeDynamicLights() {
         ColoredEndCrystalsFabric.LOGGER.info("Ryoamic Lights are loaded!");
@@ -56,4 +59,5 @@ public final class RyoamicLightsIntegration implements DynamicLightsInitializer,
         // Register
         DynamicLightHandlers.registerDynamicLightHandler(ModEntityTypes.COLORED_END_CRYSTAL.get(), entity -> 15);
     }
+    */
 }

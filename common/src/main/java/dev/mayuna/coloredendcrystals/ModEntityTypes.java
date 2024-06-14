@@ -32,7 +32,7 @@ public class ModEntityTypes {
      * @return The entity type.
      */
     private static <T extends Entity> RegistrySupplier<EntityType<T>> createEndCrystal(String id, Supplier<EntityType<T>> supplier) {
-        return ENTITY_TYPES.register(new ResourceLocation(ColoredEndCrystals.MOD_ID, id), supplier);
+        return ENTITY_TYPES.register(ResourceLocation.tryBuild(ColoredEndCrystals.MOD_ID, id), supplier);
     }
 
     /**

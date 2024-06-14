@@ -24,9 +24,9 @@ dependencies {
     modApi "dev.architectury:architectury-neoforge:${rootProject.architectury_version}"
 
     // Dynamic Lights (https://www.curseforge.com/minecraft/mc-mods/ryoamiclights/files/5353309)
-    modApi "curse.maven:ryoamiclights-913587:5353309"
+    //modApi "curse.maven:ryoamiclights-913587:5353309"
     // ObsidianUI (https://www.curseforge.com/minecraft/mc-mods/obsidianui/files/5352630)
-    modApi "curse.maven:obsidianui-684718:5352630"
+    //modApi "curse.maven:obsidianui-684718:5352630"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }

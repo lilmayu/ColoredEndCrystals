@@ -9,7 +9,6 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import org.apache.logging.log4j.LogManager;
@@ -29,7 +28,6 @@ public class ColoredEndCrystalsNeoForge {
         ColoredEndCrystals.init();
 
         NeoForge.EVENT_BUS.register(this);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onClientStart);
 
         LOGGER.info("Checking for available integrations...");
         checkForIntegrations();
@@ -68,9 +66,9 @@ public class ColoredEndCrystalsNeoForge {
 
     private void lateCheckForRyoamicLights() {
         if (isModLoaded(RYOAMIC_LIGHTS_MOD_ID)) {
-            RyoamicLightsIntegration.INSTANCE.init();
+            //RyoamicLightsIntegration.INSTANCE.init();
         } else {
-            LOGGER.warn("Ryoamic Lights are not loaded! Colored End Crystals will not emit light.");
+            //LOGGER.warn("Ryoamic Lights are not loaded! Colored End Crystals will not emit light.");
         }
     }
 

@@ -42,7 +42,7 @@ authors="Mayuna" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Adds Colored End Crystals to the game for Minecraft 1.20.6
+Adds Colored End Crystals to the game!
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.coloredendcrystals]] #optional
@@ -59,6 +59,6 @@ Adds Colored End Crystals to the game for Minecraft 1.20.6
 [[dependencies.coloredendcrystals]]
    modId="architectury"
    required=true
-   versionRange="[12,)"
+   versionRange="[13,14)"
    ordering="NONE"
    side="BOTH"
