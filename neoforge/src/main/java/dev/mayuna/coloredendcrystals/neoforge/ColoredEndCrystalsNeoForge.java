@@ -7,6 +7,7 @@ import dev.mayuna.coloredendcrystals.entities.ColoredEndCrystalEntity;
 import dev.mayuna.coloredendcrystals.neoforge.integrations.RyoamicLightsIntegration;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -51,24 +52,17 @@ public class ColoredEndCrystalsNeoForge {
         coloredEndCrystal.onRightClick(player.isShiftKeyDown());
     }
 
-    public void onClientStart(FMLClientSetupEvent event) {
-        // DynamicLightsInitializerEvent does not work
-        // Late check, because we can't register the dynamic light sources before the entity is registered
-        lateCheckForRyoamicLights();
-    }
-
     /**
      * Checks for other mod integrations
      */
     private void checkForIntegrations() {
-
     }
 
-    private void lateCheckForRyoamicLights() {
+    public static void lateCheckForRyoamicLights() {
         if (isModLoaded(RYOAMIC_LIGHTS_MOD_ID)) {
-            //RyoamicLightsIntegration.INSTANCE.init();
+            RyoamicLightsIntegration.INSTANCE.init();
         } else {
-            //LOGGER.warn("Ryoamic Lights are not loaded! Colored End Crystals will not emit light.");
+            LOGGER.warn("Ryoamic Lights are not loaded! Colored End Crystals will not emit light.");
         }
     }
 
@@ -79,7 +73,7 @@ public class ColoredEndCrystalsNeoForge {
      *
      * @return True if the mod is loaded, false otherwise
      */
-    private boolean isModLoaded(String modId) {
+    private static boolean isModLoaded(String modId) {
         return ModList.get().isLoaded(modId);
     }
 }
