@@ -22,7 +22,7 @@ dependencies {
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
 
     // Dynamic Lights (https://www.curseforge.com/minecraft/mc-mods/ryoamiclights/files/5475693)
-    modApi "curse.maven:ryoamiclights-913587:5475693"
+    modApi "curse.maven:ryoamiclights-913587:5643027"
     // ObsidianUI (https://www.curseforge.com/minecraft/mc-mods/obsidianui/files/5475671)
     modApi "curse.maven:obsidianui-684718:5475671"
 

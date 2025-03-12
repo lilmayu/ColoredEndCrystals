@@ -23,8 +23,8 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi "dev.architectury:architectury-neoforge:${rootProject.architectury_version}"
 
-    // Dynamic Lights (https://www.curseforge.com/minecraft/mc-mods/ryoamiclights/files/5475695)
-    modApi "curse.maven:ryoamiclights-913587:5475695"
+    // Dynamic Lights (https://www.curseforge.com/minecraft/mc-mods/ryoamiclights/files/5643031)
+    modApi "curse.maven:ryoamiclights-913587:5643031"
     // ObsidianUI (https://www.curseforge.com/minecraft/mc-mods/obsidianui/files/5475673)
     modApi "curse.maven:obsidianui-684718:5475673"
 
